@@ -1,16 +1,44 @@
 {
-  "name": {"message": "Postman - REST Client"},
-  "description": {"message": "Test, develop and document APIs with pleasure!"},
-  "request": {"message": "Request"},
-  "debuglink": {"message": "Debug link"},
-  "url": {"message": "URL"},
-  "method": {"message": "Method"},
-  "headers": {"message": "Headers"},
-  "data": {"message": "Data"},
-  "send": {"message": "Send"},
-  "clear": {"message": "Clear"},
-  "response": {"message": "Response"},
-  "processing": {"message": "Processing"},
-  "status": {"message": "Status"},
-  "bad_request": {"message": "Bad request"}
+   "bad_request": {
+      "message": "Bad request"
+   },
+   "clear": {
+      "message": "Clear"
+   },
+   "data": {
+      "message": "Data"
+   },
+   "debuglink": {
+      "message": "Debug link"
+   },
+   "description": {
+      "message": "Test, develop and document APIs with pleasure!"
+   },
+   "headers": {
+      "message": "Headers"
+   },
+   "method": {
+      "message": "Method"
+   },
+   "name": {
+      "message": "Tabbed Postman - REST Client"
+   },
+   "processing": {
+      "message": "Processing"
+   },
+   "request": {
+      "message": "Request"
+   },
+   "response": {
+      "message": "Response"
+   },
+   "send": {
+      "message": "Send"
+   },
+   "status": {
+      "message": "Status"
+   },
+   "url": {
+      "message": "URL"
+   }
 }

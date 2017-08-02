@@ -1,4 +1,5 @@
 {
+    "manifest_version": 2,
     "name":"__MSG_name__",
     "version":"0.8.4.19",
     "icons":{
@@ -8,23 +9,22 @@
         "128":"icon_128.png"
     },
 
-    "app":{
-        "launch":{
-            "local_path":"index.html"
-        }
+    "browser_action": {
+      "default_icon": {
+        "16":"icon_16.png",
+        "32":"icon_32.png",
+        "48":"icon_48.png",
+        "128":"icon_128.png"
+      },
+      "default_title": "Postman - REST Client"
+    },
+
+    "background": {
+      "scripts": ["js/background.js"]
     },
 
     "default_locale":"en",
-    "permissions":["cookies", "storage", "http://*/*", "https://*/*"],
-    "content_scripts":[
-        {
-            "matches":["http://getpostman.com/*", "https://getpostman.com/*"],
-            "js":["js/listener.js"],
-            "run_at":"document_end"
-        }
-    ],
-
-    "manifest_version": 2,
+    "permissions":["cookies", "storage", "activeTab", "<all_urls>"],
     "content_security_policy": "default-src 'self'; connect-src *; script-src 'self' https://ssl.google-analytics.com https://platform.twitter.com https://apis.google.com; style-src * blob: data: filesystem: 'unsafe-inline'; img-src *; frame-src * http://www.facebook.com https://plusone.google.com https://platform.twitter.com blob: data: filesystem:; font-src * blob: data: filesystem:; media-src *;",
     "offline_enabled":true
 }
