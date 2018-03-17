@@ -11,7 +11,7 @@ This is the legacy postman extension that can run in a Chrome tab.
 
 Available for download via the [Google Web Store](https://chrome.google.com/webstore/detail/tabbed-postman-rest-clien/coohjcphdfgbiolnekdpbcijmhambjff) or [GitHub](https://github.com/oznu/postman-chrome-extension-legacy/releases/latest).
 
-### This chrome extension is not supported or maintained by Postdot Technologies Pvt. Ltd.
+### This chrome extension is not supported or maintained by Postdot Technologies.
 
 Forked from: https://github.com/postmanlabs/postman-chrome-extension-legacy</br>
 State changes: https://github.com/oznu/postman-chrome-extension-legacy/commits/master
