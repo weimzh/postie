@@ -197,7 +197,6 @@ pm.broadcasts = {
         }
 
         $("#broadcasts-count").on("click", function () {
-            tracker.sendEvent('broadcast', 'view');
             pm.broadcasts.markAllAsRead();
         });
     },
@@ -210,11 +209,11 @@ pm.broadcasts = {
     },
 
     fetch:function () {
-        var broadcast_url = pm.webUrl + "/broadcasts";
-        $.get(broadcast_url, function (data) {
-            pm.broadcasts.setBroadcasts(data["broadcasts"]);
-            pm.broadcasts.renderBroadcasts();
-        });
+        // var broadcast_url = pm.webUrl + "/broadcasts";
+        // $.get(broadcast_url, function (data) {
+        //     pm.broadcasts.setBroadcasts(data["broadcasts"]);
+        //     pm.broadcasts.renderBroadcasts();
+        // });
     },
 
     setLastUpdateTime:function (last_update) {
@@ -3476,17 +3475,8 @@ pm.layout = {
 
         $('#download-all-data').on("click", function() {
             pm.indexedDB.downloadAllData(function() {
-                tracker.sendEvent('data', 'download');
                 console.log("Downloaded all data");
             });
-        });
-
-        $('#postman-wiki').on("click", function() {
-            tracker.sendEvent('wiki', 'click');
-        });
-
-        $('#upgrade').on("click", function() {
-            tracker.sendEvent('upgrade', 'click');
         });
 
         $("#upgrade").popover();
@@ -3717,7 +3707,6 @@ pm.layout = {
             container: '.v3-popover-wrapper'
         }).on("click", function () {
             that.showV3Popover(this, "sidebar");
-            tracker.sendAppView("virtualScreen/upgrade2/bottomSticker_click");
         });
     },
 
@@ -3749,7 +3738,6 @@ pm.layout = {
 
         //this event handler will be removed on popover hide
         $(".v3-carousel-button").click(function() {
-            tracker.sendAppView("virtualScreen/upgrade2/getApp_click");
             window.open("https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop", "_blank");
         });
     },

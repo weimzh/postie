@@ -16,7 +16,6 @@ pm.broadcasts = {
         }
 
         $("#broadcasts-count").on("click", function () {
-            tracker.sendEvent('broadcast', 'view');
             pm.broadcasts.markAllAsRead();
         });
     },
@@ -29,11 +28,11 @@ pm.broadcasts = {
     },
 
     fetch:function () {
-        var broadcast_url = pm.webUrl + "/broadcasts";
-        $.get(broadcast_url, function (data) {
-            pm.broadcasts.setBroadcasts(data["broadcasts"]);
-            pm.broadcasts.renderBroadcasts();
-        });
+        // var broadcast_url = pm.webUrl + "/broadcasts";
+        // $.get(broadcast_url, function (data) {
+        //     pm.broadcasts.setBroadcasts(data["broadcasts"]);
+        //     pm.broadcasts.renderBroadcasts();
+        // });
     },
 
     setLastUpdateTime:function (last_update) {

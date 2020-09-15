@@ -169,19 +169,19 @@ pm.collections = {
     },
 
     uploadCollection:function (id, callback) {
-        pm.collections.getCollectionData(id, function (name, type, filedata) {
-            var uploadUrl = pm.webUrl + '/collections';
-            $.ajax({
-                type:'POST',
-                url:uploadUrl,
-                data:filedata,
-                success:function (data) {
-                    var link = data.link;
-                    callback(link);
-                }
-            });
+        // pm.collections.getCollectionData(id, function (name, type, filedata) {
+        //     var uploadUrl = pm.webUrl + '/collections';
+        //     $.ajax({
+        //         type:'POST',
+        //         url:uploadUrl,
+        //         data:filedata,
+        //         success:function (data) {
+        //             var link = data.link;
+        //             callback(link);
+        //         }
+        //     });
 
-        });
+        // });
     },
 
     importCollectionData:function (collection) {
