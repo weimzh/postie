@@ -5241,10 +5241,7 @@ pm.request = {
         },
 
         loadCookies:function (url) {
-            chrome.cookies.getAll({url:url}, function (cookies) {
-                var count;
-                pm.request.response.renderCookies(cookies);
-            });
+            pm.request.response.renderCookies({});
         },
 
         setFormat:function (language, response, format, forceCreate) {
@@ -6100,7 +6097,7 @@ pm.request = {
     },
 
     //Send the current request
-    send:function (responseRawDataType) {
+    send: async function (responseRawDataType) {
         pm.request.prepareForSending();
         if (pm.request.url === "") {
             return;
@@ -6110,6 +6107,17 @@ pm.request = {
         var url = pm.request.encodeUrl(pm.request.url);
         var method = pm.request.method.toUpperCase();
         var originalData = pm.request.body.getData(true);
+
+        const requestedUrlObject = new URL(url);
+
+        console.log(requestedUrlObject);
+
+        await new Promise((resolve) => {
+            chrome.permissions.request({ origins: [`http://${requestedUrlObject.host}/`, `https://${requestedUrlObject.host}/`] }, (err, result) => {
+                console.log(result);
+                resolve();
+            });
+        });
 
         //Start setting up XHR
         var xhr = new XMLHttpRequest();
