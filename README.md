@@ -1,3 +1,7 @@
+# Postie
+
+Forked version of Tabbed Postman.  Still WIP.
+
 # Tabbed Postman
 
 No separate window required!
