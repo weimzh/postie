@@ -1,7 +1,7 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name":"__MSG_name__",
-    "version":"0.8.4.22",
+    "version":"0.8.4.23",
     "icons":{
         "16":"icon_16.png",
         "32":"icon_32.png",
@@ -9,7 +9,7 @@
         "128":"icon_128.png"
     },
 
-    "browser_action": {
+    "action": {
       "default_icon": {
         "16":"icon_16.png",
         "32":"icon_32.png",
@@ -20,12 +20,15 @@
     },
 
     "background": {
-      "scripts": ["js/background.js"]
+      "service_worker": "js/background.js",
+      "type": "module"
     },
 
     "default_locale":"en",
     "permissions":[],
-    "optional_permissions": ["http://*/", "https://*/"],
-    "content_security_policy": "default-src 'self'; connect-src *; script-src 'self'; style-src * blob: data: filesystem: 'unsafe-inline'; img-src *; frame-src * blob: data: filesystem:; font-src * blob: data: filesystem:; media-src *;",
+    "optional_host_permissions": ["http://*/", "https://*/"],
+    "content_security_policy": {
+      "extension_pages": "default-src 'self'; connect-src *; script-src 'self'; style-src * blob: data: filesystem: 'unsafe-inline'; img-src *; frame-src * blob: data: filesystem:; font-src * blob: data: filesystem:; media-src *;"
+    },
     "offline_enabled":true
 }
