@@ -181,6 +181,9 @@ $(window).on("unload", function () {
 
 pm.broadcasts = {
     init:function () {
+        if (!localStorage["broadcasts"]) {
+            localStorage["broadcasts"] = "[]";
+        }
         var broadcasts = localStorage["broadcasts"];
         var last_update_time = localStorage["broadcast_last_update_time"];
 
